@@ -153,5 +153,13 @@ function animate(){
 
 renderer.setAnimationLoop( animate);
 
+window.addEventListener('resize',() => {
+  let w = window.innerWidth;
+  let h = window.innerHeight;
+  camera.aspect = w/h;
+  camera.updateProjectionMatrix()
+  renderer.setSize(w,h);
+})
+
 
 
